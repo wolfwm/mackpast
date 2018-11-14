@@ -1,18 +1,19 @@
 from random import *
-import os
+#import os
 
-def embaralharPergunta (listaResposta):
+def embaralharPergunta (listaParagrafos):
     listaPergunta = []
-    while (len(listaPergunta) < len(listaResposta)):
-        temp = randint(0,len(listaResposta)-1)
-        if listaResposta[temp] not in listaPergunta:
-            listaPergunta.append(listaResposta[temp])
+    while (len(listaPergunta) < len(listaParagrafos)):
+        temp = randint(0,len(listaParagrafos)-1)
+        if listaParagrafos[temp] not in listaPergunta:
+            listaPergunta.append(listaParagrafos[temp])
     return listaPergunta
 
 def exibirParagrafos(lista):
     print()
     for x in range(len(lista)):
         print(lista[x],'\n')
+    validarProsseguir()
 
 def exibirListaNumerada(lista):
     print()
@@ -40,20 +41,58 @@ def validarSN():
     while escolha != 's' and escolha != 'sim' and escolha != '' and escolha != 'n' and escolha != 'nao' and escolha != 'não':
         escolha = input('Escolha inválida\nS/n: ')
     if escolha == 's' or escolha == 'sim' or escolha == '':
-        return False
-    else:
         return True
+    else:
+        return False
 
 def validarProsseguir():
     input('Pressione ENTER para prosseguir')
+    clearScreen()
 
-resposta1 = ['primeiro','segundo','terceiro','quarto','quinto','sexto']
-pergunta1 = embaralharPergunta(resposta1)
+def checkIfInRangeAndInListFromList(listToIndex, index, targetList):
+        try:
+            if int(index)-1 >= 0:
+                if int(index)-1 < len(listToIndex):
+                    if listToIndex[int(index)-1] in targetList:
+                        return True
+                    else:
+                        return False
+                else:
+                    return True
+            else:
+                return True
+        except:
+            return True
+
+def pergConferirResp(listaParagrafos):
+    listaPergunta = embaralharPergunta(listaParagrafos)
+    flag = True
+    while flag:
+        clearScreen()
+        listaResposta = []
+        exibirListaNumerada(listaPergunta)
+        for x in range(len(listaParagrafos)):
+            print('Parágrafo',x+1,':')
+            temp = input()
+            while checkIfInRangeAndInListFromList(listaPergunta,temp,listaResposta):
+                print('Escolha inválida\nParágrafo', x + 1, ':')
+                temp = input()
+            listaResposta.append(listaPergunta[int(temp)-1])
+        if listaResposta == listaParagrafos:
+            print('\nAcertou!\n')
+            flag = False
+            validarProsseguir()
+        else:
+            print('Errou')
+            validarProsseguir()
 
 def main():
-    exibirParagrafos(resposta1)
-    validarProsseguir()
     clearScreen()
-    exibirListaNumerada(pergunta1)
+
+    paragrafos1 = ['primeiro', 'segundo', 'terceiro', 'quarto', 'quinto', 'sexto']
+
+    exibirParagrafos(paragrafos1)
+
+    pergConferirResp(paragrafos1)
 
 main()
