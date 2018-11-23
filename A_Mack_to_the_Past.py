@@ -14,7 +14,7 @@ def telaInicio():
     \n\n\n\n\n\n\n\n\n\n
     Alunos: Wolfgang Walder, Kleber Yoshida, Jorge Gomes
     
-    A História do Mackenzie]
+    A História do Mackenzie
     
     Instruções para jogar:
     -Pressione ENTER para iniciar o jogo e avançar a cada nº inserido
@@ -175,7 +175,7 @@ def fimDeJogo(pontos, paragrafos):
     elif pontos >= 500:
         title = 'Mackenzista'
     else:
-        title = 'Aprendiz'
+        title = 'Vestibulando'
 
     print('Seu titulo de honra é:',title)
 
