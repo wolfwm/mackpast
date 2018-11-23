@@ -10,9 +10,21 @@ def telaInicio():
                                      / ___ |   / /  / / /_/ / /__/ ,<    / /_/ /_/ /  / /_/ / / /  __/  / ____/ /_/ (__  ) /_  
                                     /_/  |_|  /_/  /_/\__,_/\___/_/|_|   \__/\____/   \__/_/ /_/\___/  /_/    \__,_/____/\__/  
                                                                                                                                
-    \n\n\n\n\n
+    \n\n\n
     \n\n\n\n\n\n\n\n\n\n
-    \n\n\n\n\n\n\n\n\n\n''')
+    Alunos: Wolfgang Walder, Kleber Yoshida, Jorge Gomes
+    
+    A História do Mackenzie]
+    
+    Instruções para jogar:
+    -Pressione ENTER para iniciar o jogo e avançar a cada nº inserido
+    -Esse jogo da memória irá mostrar a estória em partes da Universidade Presbiteriana Mackenzie
+    -Insira os parágrafos em ordem
+    -Você terá 5 tentativas para acertar a ordem correta
+    -A cada fase você será pontuado com 100, 120 ou 150 pontos, dependendo do nº de tentativas utilizadas
+    -A cada tentativa errada, você perderá -100 pontos
+    -Ao final do jogo você irá receber um título honorário dependendo da sua pontuação total
+    ''')
     validarProsseguir()
 
 def embaralharPergunta (listaParagrafos):
@@ -106,7 +118,7 @@ def pergConferirResp(listaParagrafos):
                 if i == 0:
                     pontos += 150
                     print('Recebeu 150 pontos')
-                elif len(listaPergunta) >= len(listaParagrafos) - 2:
+                elif i < 2:
                     pontos += 120
                     print('Recebeu 120 pontos')
                 else:
