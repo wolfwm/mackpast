@@ -106,7 +106,7 @@ def pergConferirResp(listaParagrafos):
                 if i == 0:
                     pontos += 150
                     print('Recebeu 150 pontos')
-                elif len(listaPergunta) == len(listaParagrafos) - 1:
+                elif len(listaPergunta) >= len(listaParagrafos) - 2:
                     pontos += 120
                     print('Recebeu 120 pontos')
                 else:
