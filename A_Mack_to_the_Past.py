@@ -3,7 +3,19 @@ from random import *
 
 def telaInicio():
     clearScreen()
-    print('''
+    print('''Alunos: Wolfgang Walder, Kleber Yoshida, Jorge Gomes
+
+A Estória do Mackenzie
+
+Instruções para jogar:
+    -Pressione ENTER para iniciar o jogo e avançar a cada nº inserido
+    -Esse jogo da memória irá mostrar a estória em partes da Universidade Presbiteriana Mackenzie
+    -Insira os parágrafos em ordem
+    -Você terá 5 tentativas para acertar a ordem correta
+    -A cada fase você será pontuado com 100, 120 ou 150 pontos, dependendo do nº de tentativas utilizadas
+    -A cada tentativa errada, você perderá -100 pontos
+    -Ao final do jogo você irá receber um título honorário dependendo da sua pontuação total
+     
                                         ___       __  ___           __      __           __  __            ____             __ 
                                        /   |     /  |/  /___ ______/ /__   / /_____     / /_/ /_  ___     / __ \____ ______/ /_
                                       / /| |    / /|_/ / __ `/ ___/ //_/  / __/ __ \   / __/ __ \/ _ \   / /_/ / __ `/ ___/ __/
